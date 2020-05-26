@@ -1,0 +1,7 @@
+# Build / run artifacts
+__pycache__
+*.py[co]
+*.sqlite3
+build/
+node_modules/
+static/

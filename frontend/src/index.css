@@ -1,0 +1,211 @@
+/*
+ * Global styles and 3rd-party style overrides
+ */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#overview-title {
+  display: flex;
+  align-items: baseline;
+}
+#patient-name {
+  cursor: pointer;
+  color: #404040
+}
+#patient-name:hover {
+  color: black;
+}
+
+/* Section stylings */
+section {
+  margin: 0.75rem 0;
+}
+.article-header {
+  border-bottom: 1px solid gainsboro;
+}
+.section-header {
+  background: linear-gradient(90deg, white, 70%, steelblue);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid gray;
+}
+.article-header h3,
+.section-header h5 {
+  margin: 0;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0 0.25rem;
+}
+tr:hover {
+  background-color: whitesmoke;
+}
+tr.no-hover:hover {
+  background-color: white;
+}
+.highlighted {
+  /* tr mostly */
+  background-color: lightgoldenrodyellow;
+}
+.timeline {
+  background-color: whitesmoke;
+}
+.label {
+  overflow: hidden;
+  text-align: right;
+}
+
+/* Vertical-header info table */
+table.info,
+table.vert-info {
+  width: auto;
+}
+table.info th,
+table.vert-info th,
+table.vert-info td {
+  white-space: nowrap;
+}
+/* Horizontal-header info table */
+table.info th {
+  border-bottom: 1px solid gray;
+}
+
+/* General chart-table styles (labs, meds, etc) */
+table.charts {
+  width: 100%;
+}
+table.charts th:not(:first-child),
+table.charts td:not(:first-child) {
+  border-left: 1px dashed gainsboro;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/* CodeAutocomplete */
+tr.autocomplete-item {
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  border-bottom: 1px solid #d4d4d4;
+}
+tr.autocomplete-item:hover {
+  /* background-color: #e9e9e9!important; */
+}
+tr.autocomplete-item:last-of-type {
+  border-bottom: none;
+}
+td.autocomplete-header {
+  font-weight: bold;
+  background-color: gainsboro;
+  border-bottom: 1px solid black;
+}
+div#autocomplete-results {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-top: none;
+  top: 102%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  transition: all 250ms;
+  overflow-y: scroll;
+  z-index: -1;
+  opacity: 0;
+  max-height: 0;
+}
+div#autocomplete-container {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+/**
+ * Med chart styles
+ */
+.medrow {
+  border-bottom: 1px solid black;
+  display: none;
+}
+.medrow-enter {
+  opacity: 0.0;
+  display: table-row-group;
+  transition: all 300ms ease-out;
+}
+.medrow-enter-active,
+.medrow-enter-done {
+  opacity: 1.0;
+  display: table-row-group;
+}
+.med-detail-row-label {
+  background-color: lightgoldenrodyellow;
+}
+.med-detail-row-label:hover {
+  background-color: whitesmoke;
+}
+
+/**
+ * Condition tab
+ */
+#condition-relevance:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+#condition-relevance:focus:invalid {
+  outline: none;
+}
+.table-section-header {
+  text-align: center;
+  background-color: whitesmoke;
+  border: 1px solid gray;
+  border-left: none;
+  border-right: none;
+}
+
+/**
+ * lab Chart styles
+ */
+.tooltip-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.popup-box {
+  border: 1px solid black;
+  border-radius: 6px;
+  background-color: white;
+}
+
+.radio-label {
+  padding: 0 1ch;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.radio-label input[type='radio'] {
+  margin-right: 0.25rem;
+}
+
+/**
+ * 3rd-party overrides
+ */
+.popover {
+  max-width: 50vw!important;
+}
+
+.card {
+  position: inherit!important;
+  margin: 0.5em!important;
+}
+
+.rangeslider {
+  flex: 1;
+}

@@ -1,0 +1,22 @@
+code,first_parent,last_parent,description,color
+U,00,00,Procedures,#27AE60
+AB,001,139,Infectious,#698B22
+CD,140,239,Oncology,#000000
+E,240,279,Endocrine/Metabolic/Immune,#7A378B
+DH,280,289,Hematologic,#C00000
+F,290,319,Psychiatry,#FF1CAE
+G,320,359,Neurologic,#FFB90F
+H,360,389,Eye/Ear,#63B8FF
+I,390,459,Cardiovascular,#8B1A1A
+J,460,519,Pulmonary,#0000FF
+K,520,579,Gastrointestinal,#4F4F2F
+N,580,629,Genitourinary,#FFB90F
+O,630,679,Obsetrics,#FFB6C1
+L,680,709,Dermatologic,#CDB38B
+M,710,739,Musculoskeletal,#FF8C00
+Q,740,759,Congenital,#EE6A50
+P,760,779,Perinatal,#00CD00
+R,780,799,Signs/Symptoms,#777777
+ST,800,999,Injury/Toxcity,#EE6A50
+XV,V01,V91,Other Factors,#919191
+XE,E000,E999,Other Factors External,#C5C5C5

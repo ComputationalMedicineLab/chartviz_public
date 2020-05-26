@@ -1,0 +1,37 @@
+# Development configuration
+# - The source code is mounted in the image as a volume so changes don't require rebuilding the container
+# - We run yarn's dev server & django's dev server rather than a prod build
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+    command: ./manage.py runserver 0:8000
+    working_dir: /code/backend
+    volumes:
+      - ./backend:/code/backend
+      - ipython-history:/root/.ipython/profile_default
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DJANGO_ENV=development
+      - REACT_UPSTREAM=http://frontend:3000
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+
+  frontend:
+    image: node:alpine
+    command: yarn start
+    working_dir: /code
+    volumes:
+      - ./frontend:/code
+    expose:
+      - "3000"

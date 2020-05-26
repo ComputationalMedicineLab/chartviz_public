@@ -1,0 +1,5 @@
+#!/bin/sh
+DIR=/code/backend
+cd $DIR
+./manage.py collectstatic --noinput
+exec waitress-serve chartviz.wsgi:application
