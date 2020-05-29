@@ -15,44 +15,9 @@ BASE = abspath(dirname(dirname(dirname(__file__))))
 CODES_DIR = join(BASE, 'resources', 'codes')
 
 lab_category_map = {
-  "Creat"  : "Chemistry",
-  "Gluc"   : "Chemistry",
-  "K"      : "Chemistry",
-  "Na"     : "Chemistry",
-  "BUN"    : "Chemistry",
-  "CO2"    : "Chemistry",
-  "Cl"     : "Chemistry",
-  "Ca"     : "Chemistry",
-  "AN-GAP" : "Chemistry",
-  "Alb"    : "Chemistry",
-  "PCV"    : "Complete Blood Count",
-  "Hgb"    : "Complete Blood Count",
-  "WBC"    : "Complete Blood Count",
-  "MCV"    : "Complete Blood Count",
-  "RBC"    : "Complete Blood Count",
-  "MCH"    : "Complete Blood Count",
-  "MCHC"   : "Complete Blood Count",
-  "RDW"    : "Complete Blood Count",
-  "Plt-Ct" : "Complete Blood Count",
-  "UpH"    : "Complete Blood Count",
-  "USpGr"  : "Complete Blood Count",
-  "NTAuto" : "Complete Blood Count 2",
-  "RDWSD"  : "Complete Blood Count 2",
-  "NRBC"   : "Complete Blood Count 2",
-  "NRBC#"  : "Complete Blood Count 2",
-  "MPV"    : "Complete Blood Count 2",
-  "NEUTAB" : "Complete Blood Count 3",
-  "MONORE" : "Complete Blood Count 3",
-  "NEUTRE" : "Complete Blood Count 3",
-  "MONOAB" : "Complete Blood Count 3",
-  "BASORE" : "Complete Blood Count 3",
-  "BASOAB" : "Complete Blood Count 3",
-  "LYMPRE" : "Complete Blood Count 3",
-  "LYMPAB" : "Complete Blood Count 3",
-  "TBil"   : "Liver Function Tests",
-  "SGOT"   : "Liver Function Tests",
-  "SGPT"   : "Liver Function Tests",
-  "AlkP"   : "Liver Function Tests",
+    # A mapping needs to be supplied here to group lab codes into categories.
+    # The categories we used are "Chemisty", "Complete Blood Count", "Complete
+    # Blood Count 2", "Complete Blood Count 3", and "Liver Function Tests"
 }
 
 class Command(BaseCommand):

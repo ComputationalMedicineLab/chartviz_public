@@ -55,27 +55,21 @@ def rollup_meds(raw):
 
 
 # Lab Category data
+# XXX: Blood chemistries and complete blood counts are treated differently than
+# other labs by the frontend, being displayed in some views regardless of
+# whether or not the patient has the associated lab data. Here we created a
+# list of each of these permament labs, which is then populated by rollup_labs
+# below. Each item is a dict with keys 'events': [], 'code': str, and
+# 'description': str
+
 # Blood Chemistries
 CHEM = [
-    {'events': [], 'code': 'Na', 'description': 'SODIUM BLOOD'},
-    {'events': [], 'code': 'K', 'description': 'POTASSIUM BLOOD'},
-    {'events': [], 'code': 'Cl', 'description': 'CHLORIDE BLOOD'},
-    {'events': [], 'code': 'CO2', 'description': 'CARBON DIOXIDE BLOOD'},
-    {'events': [], 'code': 'Gluc', 'description': 'GLUCOSE BLOOD'},
-    {'events': [], 'code': 'GluBed', 'description': 'BEDSIDE GLUCOSE'},
-    {'events': [], 'code': 'BUN', 'description': 'UREA NITROGEN BLOOD'},
-    {'events': [], 'code': 'Creat', 'description': 'CREATININE BLOOD'},
+    # Example item:
+    # {'events': [], 'code': 'Na', 'description': 'SODIUM BLOOD'},
 ]
-CBC = [
-    {'events': [], 'code': 'Hgb', 'description': 'HEMOGLOBIN BLOOD'},
-    {'events': [], 'code': 'MCV', 'description': 'MCV'},
-    {'events': [], 'code': 'RBC', 'description': 'RBC'},
-    {'events': [], 'code': 'WBC', 'description': 'WBC'},
-    {'events': [], 'code': 'Plt-Ct', 'description': 'PLATELET COUNT'},
-]
+CBC = []
 CHEM_CODES = {x['code'] for x in CHEM}
 CBC_CODES = {x['code'] for x in CBC}
-
 
 def rollup_labs(raw):
     """Take a flat qset of lab results and group by kind and code"""

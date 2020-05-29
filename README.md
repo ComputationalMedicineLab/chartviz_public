@@ -21,3 +21,16 @@ relating ICD codes, labs, and medications. Vocabulary RE's are in
 `backend/taxonomies/embedding.py`. This model is required, but until a model
 can be trained on OMOP or other standardized data, it will need to be generated
 per institution using an institution-appropriate vocabulary and dataset.
+
+The management command to load codes from CSV into the database at
+`backends/initial_data/management/commands/load_codes.py` requires a mapping
+from lab codes to categories (we used this to, for example, group certain
+results such as the Complete Blood Counts or blood chemistry panels).
+Similarly, since some frontend views treat blood chemistry and cbc panel labs
+uniquely, a listing will need to be given in `backends/patients/util.py` (where
+lab results are grouped into Chemistry, CBC, and other before use by the API).
+
+In `backend/patients/api.py` where clinical notes are fetched from the database
+by the API we exclude certain types of perfunctory or overly common documents
+by matching against VUMC specific doc types and sub types. This code is
+included in a comment and can be adapted as needed.

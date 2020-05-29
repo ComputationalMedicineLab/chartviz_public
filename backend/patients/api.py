@@ -131,12 +131,18 @@ class PatientViewSet(ReadOnlyModelViewSet):
             return Response({})
         date = parse_date(date)
         patient = self.get_object()
-        notes_base = patient.docs.exclude(
-              Q(doc_type='CC')
-            | Q(doc_type='HP', sub_type__icontains='clinical communication')
-            | Q(doc_type='HP', sub_type__icontains='provider communication')
-            | Q(doc_type='HP', sub_type__icontains='braden')
-        )
+        # XXX: This exclude clause prunes certain types of perfunctory, overly
+        # common note types from the clinical docs data. Unfortunately the
+        # exact means of doing so is dataset dependent; this will need to be
+        # altered to match your own data.
+
+        # notes_base = patient.docs.exclude(
+        #       Q(doc_type='CC')
+        #     | Q(doc_type='HP', sub_type__icontains='clinical communication')
+        #     | Q(doc_type='HP', sub_type__icontains='provider communication')
+        #     | Q(doc_type='HP', sub_type__icontains='braden')
+        # )
+        notes_base = patient.docs
         notes = notes_base.filter(date=date)
         for i in range(1, 4):
             if notes:

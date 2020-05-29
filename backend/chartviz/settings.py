@@ -17,7 +17,7 @@ BACKEND_DIR = BASE_DIR
 FRONTEND_DIR = join(BACKEND_DIR, '..', 'frontend')
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1$0d2)h972r5#^#yq18sanvk1^e^9#jaco=y!r^dl1(%uds+c9'
+SECRET_KEY = 'secret_key_in_need_of_replacing'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = getenv('DJANGO_ENV') == 'development'
