@@ -1,5 +1,6 @@
 ChartViz
 ========
+Maintainer Email: john.m.still@vumc.org
 
 A chart visualization / summarization prototype.
 
@@ -34,3 +35,6 @@ In `backend/patients/api.py` where clinical notes are fetched from the database
 by the API we exclude certain types of perfunctory or overly common documents
 by matching against VUMC specific doc types and sub types. This code is
 included in a comment and can be adapted as needed.
+
+Development of this code was funded in part by grant R01EB020666 from the
+National Institute of Biomedical Imaging and Bioengineering.
